@@ -14,3 +14,13 @@ Baseline Interpreter
 Provides relatively straight-forward EVM implementation.
 Performs only minimalistic JUMPDEST analysis.
 Experimental. Can be enabled with O=0 option.
+
+
+As geth plugin
+evmone implements the EVMC API for Ethereum Virtual Machines. It can be used as a plugin replacing geth's internal EVM. But for that a modified version of geth is needed. The Ewasm's fork of go-ethereum provides binary releases of geth with EVMC support.
+
+Next, download evmone from Releases.
+
+Start the downloaded geth with --vm.evm option pointing to the evmone shared library.
+
+geth --vm.evm=./libevmone.so
